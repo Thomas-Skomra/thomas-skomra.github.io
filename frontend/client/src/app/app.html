@@ -1,0 +1,131 @@
+﻿<!-- app.component.html -->
+<div class="min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-white">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 flex items-center justify-between bg-white p-4 shadow-md dark:bg-gray-800">
+    <div class="relative ml-auto">
+      <p-dropdown [options]="languages"
+                  [(ngModel)]="currentLang"
+                  (onChange)="changeLanguage($event.value)"
+                  optionLabel="label"
+                  dataKey="value"
+                  [showClear]="false"
+                  >
+        <ng-template let-lang pTemplate="selectedItem">
+          <div class="flex items-center gap-2">
+            <img [src]="lang.icon" alt="" class="h-5 w-5" />
+            <span>{{ lang.label }}</span>
+          </div>
+        </ng-template>
+        <ng-template let-lang pTemplate="item">
+          <div class="flex items-center gap-2">
+            <img [src]="lang.icon" alt="" class="h-5 w-5" />
+            <span>{{ lang.label }}</span>
+          </div>
+        </ng-template>
+      </p-dropdown>
+    </div>
+    <div class="flex items-center gap-4">
+      <button pButton type="button" icon="pi pi-download" label="Download PDF" class="p-button-sm" (click)="downloadPdf()"></button>
+      <p-inputSwitch [(ngModel)]="isDarkMode" (onChange)="toggleTheme()"></p-inputSwitch>
+    </div>
+  </header>
+
+  <section class="theme-section flex flex-col items-center gap-6 rounded-lg p-6 shadow-md md:flex-row">
+    <!-- Avatar -->
+    <img src="avatar.jpg"
+         alt="Profile Photo"
+         class="h-32 w-32 rounded-full object-cover shadow-lg" />
+
+    <!-- Contact Info -->
+    <div class="space-y-2 text-center md:text-left">
+      <h1 class="text-2xl font-bold">{{ 'personalInfo.name' | translate }}</h1>
+      <p class="text-gray-700 dark:text-gray-300">
+        <i class="pi pi-home text-xl"></i>
+        {{ 'personalInfo.location' | translate }}
+      </p>
+      <p>
+        <a href="tel:{{ 'personalInfo.mobile' | translate }}" class="text-gray-700 dark:text-gray-300">
+          <i class="pi pi-phone text-xl"></i>
+          {{ 'personalInfo.mobile' | translate }}
+        </a>
+      </p>
+      <p>
+        <a href="mailto:{{ 'personalInfo.email' | translate }}">
+          <i class="pi pi-send text-xl"></i>
+          {{ 'personalInfo.email' | translate }}
+        </a>
+      </p>      
+    </div>
+  </section>
+
+  <!-- Hero / Summary -->
+  <section class="bg-gray-100 p-6 md:p-12 dark:bg-gray-800">
+    <div class="mx-auto max-w-4xl text-center">
+      <h1 class="mb-4 text-3xl font-bold">Senior Full Stack Developer</h1>
+      <p class="text-lg">
+        Senior Software Engineer with 12+ years of experience in full-stack web development. Proven expertise in .NET, Angular, and scalable architecture. Skilled in building robust systems from the ground up, designing APIs, optimizing performance, and leading end-to-end delivery.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="p-6 md:p-12">
+    <div class="mx-auto max-w-4xl">
+      <h2 class="mb-4 text-2xl font-semibold">Skills</h2>
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div>
+          <h3 class="font-semibold">Languages</h3>
+          <p>C#, JavaScript, TypeScript, T-SQL</p>
+        </div>
+        <div>
+          <h3 class="font-semibold">Frameworks & Frontend</h3>
+          <p>.NET 4.6–9, Angular, AngularJS, Tailwind, PrimeNG, Web Forms, jQuery</p>
+        </div>
+        <div>
+          <h3 class="font-semibold">Backend & APIs</h3>
+          <p>ASP.NET, REST APIs, Entity Framework, EF Core</p>
+        </div>
+        <div>
+          <h3 class="font-semibold">DevOps & Tools</h3>
+          <p>Azure, Docker, Kubernetes, Azure DevOps, Git, CI/CD, Mailchimp, Dotdigital</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="bg-gray-100 p-6 md:p-12 dark:bg-gray-800">
+    <div class="mx-auto max-w-4xl">
+      <h2 class="mb-6 text-2xl font-semibold">Professional Experience</h2>
+
+      <p-timeline [value]="experience" align="alternate" styleClass="customized-timeline">
+        <ng-template pTemplate="content" let-job>
+          <div class="mb-6">
+            <h3 class="text-xl font-bold">{{ job.title }} – {{ job.company }}</h3>
+            <p class="mb-2 text-sm italic">{{ job.location }} | {{ job.period }}</p>
+            <!-- Project links -->
+            <div class="space-y-1">
+              <p class="text-sm text-gray-700 dark:text-gray-300">
+                🔗 <a href="{{ job.projectUrl }}" target="_blank" class="text-blue-600 hover:underline dark:text-blue-400">{{ job.projectName }}</a>
+              </p>
+            </div>
+            <ul class="list-disc space-y-1 pl-6">
+              <li *ngFor="let responsibility of job.responsibilities">{{ responsibility }}</li>
+            </ul>
+          </div>
+        </ng-template>
+      </p-timeline>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="p-6 md:p-12">
+    <div class="mx-auto max-w-4xl">
+      <h2 class="mb-4 text-2xl font-semibold">Education</h2>
+      <div>
+        <p class="font-bold">AGH University of Science and Technology, Cracow</p>
+        <p>2009–2014 – Master’s Degree in Automatics and Robotics</p>
+      </div>
+    </div>
+  </section>
+</div>
