@@ -4,5 +4,20 @@
     "location": "Cracow, Poland / Birmingham, United Kingdom",
     "mobile": "+44 7927 262552",
     "email": "thomas.skomra@gmail.com"
+  },
+  "summary": {
+    "title": "Senior Full Stack Developer",
+    "description": "Senior Software Engineer with 12+ years of experience in full-stack web development. Proven expertise in .NET, Angular, and scalable architecture. Skilled in building robust systems from the ground up, designing APIs, optimizing performance, and leading end-to-end delivery."
+  },
+  "experience": {
+    "title": "Professional Experience"
+  },
+  "education": {
+    "title": "Education",
+    "school": "AGH University of Science and Technology, Cracow",
+    "degree": "2009–2014 – Master of Science in Engineering, Automatics and Robotics"
+  },
+  "skills": {
+    "title": "Umiejętności"
   }
 }

@@ -4,5 +4,20 @@
     "location": "Kraków, Polska / Birmingham, Wielka Brytania",
     "mobile": "+48 604 553 313",
     "email": "thomas.skomra@gmail.com"
+  },
+  "summary": {
+    "title": "Senior Full Stack Developer",
+    "description": "Starszy Inżynier Oprogramowania z ponad 12-letnim doświadczeniem w tworzeniu aplikacji webowych full-stack. Udokumentowana znajomość technologii .NET, Angular oraz skalowalnych architektur. Specjalizuje się w budowie solidnych systemów od podstaw, projektowaniu API, optymalizacji wydajności oraz prowadzeniu projektów od początku do końca."
+  },
+  "experience": {
+    "title": "Doświadczenie zawodowe"
+  },
+  "education": {
+    "title": "Wykształcenie",
+    "school": "Akademia Górniczo-Hutnicza, Kraków",
+    "degree": "2009–2014 – Magister inżynier, Automatyka i Robotyka"
+  },
+  "skills": {
+    "title": "Umiejętności"
   }
 }
