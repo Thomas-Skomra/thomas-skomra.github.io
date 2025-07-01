@@ -14,13 +14,13 @@
       }
     </div>
 
-    <div class="bg-default-navy flex h-32 w-full flex-col items-center justify-center text-white">
+    <div class="bg-default-navy flex h-26 w-full flex-col items-center justify-center text-white">
       <div class="items-start">
         <h1 class="ml-65 text-4xl font-bold uppercase">
           {{ 'personalInfo.name' | translate }}
         </h1>
         <h2 class="ml-65 text-xl uppercase">
-          {{ 'summary.title' | translate }}
+          {{ 'summary.jobTitle' | translate }}
         </h2>
       </div>
     </div>
@@ -29,11 +29,13 @@
 
       <!-- Sidebar -->
       <aside class="text-md flex w-[40%] flex-col items-center bg-[#E4E4E4] p-6">
-        <img src="avatar.jpg" alt="Profile Photo" class="-mt-24 mb-4 h-[200px] w-[200px] rounded-full border-4 border-white object-cover">
 
-        <div class="w-full space-y-5 text-black">
+        <img src="avatar.jpg" alt="Profile Photo" class="-mt-30 mb-4 h-[200px] w-[200px] rounded-full border-4 border-white object-cover">
+
+        <div class="w-full space-y-3 text-black">
+
           <div>
-            <h2 class="mb-2 border-b border-gray-400 text-sm font-semibold uppercase">Contact</h2>
+            <h2 class="mb-2 border-b border-gray-400 text-sm font-semibold uppercase">{{ 'personalInfo.title' | translate }}</h2>
 
             <div class="text-sm">
               <a href="tel:{{ 'personalInfo.mobile' | translate }}">
@@ -72,22 +74,25 @@
           </div>
 
           <div>
-            <h2 class="mb-2 border-b border-gray-400 text-sm font-semibold uppercase">Skills</h2>
+            <h2 class="mb-2 border-b border-gray-400 text-sm font-semibold uppercase">{{ 'skills.title' | translate }}</h2>
             <div *ngFor="let skillCategory of skillCategories">
-              <h3 class="text-sm font-semibold">{{ skillCategory.name }}</h3>
+              <h3 class="pt-0.25 pb-0.25 text-sm font-semibold">{{ skillCategory.name }}</h3>
               <p class="text-sm">{{ skillCategory.items.join(', ') }}</p>
             </div>
           </div>
+
           <div>
-            <h2 class="mb-2 border-b border-gray-400 text-sm font-semibold uppercase">Languages</h2>
-            <p class="text-sm">English (Fluent)</p>
-            <p class="text-sm">Polish (Native)</p>
-            <p class="text-sm">Spanish (Intermediate)</p>
+            <h2 class="mb-2 border-b border-gray-400 text-sm font-semibold uppercase">{{ 'languagesTitle' | translate }}</h2>
+            <p class="text-sm">{{ 'english' | translate }}</p>
+            <p class="text-sm">{{ 'polish' | translate }}</p>
+            <p class="text-sm">{{ 'spanish' | translate }}</p>
           </div>
+
           <div>
             <h2 class="mb-2 border-b border-gray-400 text-sm font-semibold uppercase">{{ 'rodoTitle' | translate }}</h2>
             <p class="text-sm">{{ 'rodoDisclaimer' | translate }}</p>
           </div>
+
         </div>
       </aside>
 
@@ -95,7 +100,7 @@
       <main class="w-[60%] p-8 pt-4 text-sm text-gray-800">
 
         <section class="mb-3">
-          <h2 class="mb-2 border-b border-gray-400 pb-1 text-sm font-semibold uppercase">Profile</h2>
+          <h2 class="mb-2 border-b border-gray-400 pb-1 text-sm font-semibold uppercase">{{ 'summary.title' | translate }}</h2>
 
           <p>
             {{ 'summary.description' | translate }}
@@ -120,7 +125,7 @@
                   </a>
                 </div>
 
-                <ul class="list-disc space-y-1 pl-6">
+                <ul class="list-disc space-y-1 pl-4" [ngClass]="'text-[' + expFontSize + ']'">
                   <li class="mb-0" *ngFor="let responsibility of job.responsibilities">{{ responsibility }}</li>
                 </ul>
 

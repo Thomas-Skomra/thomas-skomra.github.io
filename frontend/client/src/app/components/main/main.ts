@@ -25,7 +25,7 @@ import { PrintableCvComponent } from '../printable-cv/printable-cv';
 export class MainComponent implements OnInit {
   isDarkMode = false;
   fabOpen = false;
-  
+
   experience: any[] = [];
   skillCategories: any[] = [];
 

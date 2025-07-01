@@ -1,5 +1,6 @@
 {
   "personalInfo": {
+    "title": "Kontakt",
     "name": "Tomasz Skomra",
     "location": "Zdalnie / Kraków, Polska / Birmingham, Wielka Brytania",
     "mobile": "+48 604 553 313",
@@ -7,26 +8,27 @@
     "cvUrl": "Tomasz_Skomra_CV.pdf"
   },
   "summary": {
-    "title": "Senior Full Stack Developer",
-    "description": "Starszy Inżynier Oprogramowania z ponad 12-letnim doświadczeniem w tworzeniu aplikacji webowych full-stack. Udokumentowana znajomość technologii .NET, Angular oraz skalowalnych architektur. Specjalizuje się w budowie solidnych systemów od podstaw, projektowaniu API, optymalizacji wydajności oraz prowadzeniu projektów od początku do końca."
+    "title": "Podsumowanie",
+    "jobTitle": "Starszy Full Stack Developer",
+    "description": "Starszy inżynier oprogramowania z ponad 12-letnim doświadczeniem w tworzeniu aplikacji webowych typu full stack. Posiada udokumentowaną znajomość technologii .NET, Angular oraz nowoczesnych, skalowalnych architektur. Specjalizuje się w budowie niezawodnych i wydajnych systemów od podstaw, projektowaniu API, optymalizacji wydajności oraz kompleksowym prowadzeniu projektów – od fazy analizy po wdrożenie."
   },
   "experience": {
     "title": "Doświadczenie zawodowe",
     "jobs": [
       {
         "company": "Cappfinity",
-        "location": "Solihull, UK",
+        "location": "Zdalnie / Solihull, UK",
         "title": "Starszy Inżynier Oprogramowania",
         "period": "Maj 2016 – Lipiec 2025",
         "projectUrl": "https://www.strengthsprofile.com",
         "projectName": "Strengths Profile",
         "responsibilities": [
-          "Co-architected and built StrengthsProfile platform from scratch.",
-          "Implemented authentication, internal/public APIs.",
-          "Developed basket system with custom discounting.",
-          "Built automated accreditations & email workflows.",
-          "Integrated with Mailchimp and Dotdigital.",
-          "Led migration from .NET 4.6 to .NET 9 using Docker, Kubernetes, Azure DevOps."
+          "Współprojektowanie i budowa platformy StrengthsProfile od podstaw.",
+          "Implementacja uwierzytelniania oraz wewnętrznych/publicznych API.",
+          "Rozwój systemu koszyka z niestandardowym rabatowaniem.",
+          "Automatyzacja procesu akredytacji i wysyłki wiadomości e-mail.",
+          "Integracja z Mailchimp i Dotdigital.",
+          "Migracja z .NET 4.6 do .NET 9 z użyciem Docker, Kubernetes, Azure DevOps."
         ]
       },
       {
@@ -37,9 +39,9 @@
         "projectUrl": "https://www.zeelsolutions.com/zeel-recruiter",
         "projectName": "Zeel Recruiter",
         "responsibilities": [
-          "Developed features for recruitment & CRM tools.",
-          "Enhanced application performance and code quality.",
-          "Introduced AngularJS into legacy Web Forms codebase."
+          "Tworzenie funkcji dla narzędzi rekrutacyjnych i CRM.",
+          "Poprawa wydajności aplikacji i jakości kodu.",
+          "Wprowadzenie AngularJS do kodu opartego na Web Forms."
         ]
       },
       {
@@ -50,9 +52,9 @@
         "projectUrl": "https://raterequest.giv-audit.com/",
         "projectName": "Rate Track Rate Request",
         "responsibilities": [
-          "Created web app for logistics quote requests.",
-          "Optimized T-SQL-heavy stored procedures.",
-          "Worked with Web Forms, jQuery, and Telerik suite."
+          "Stworzenie aplikacji webowej do zapytań logistycznych.",
+          "Optymalizacja złożonych procedur składowanych w T-SQL.",
+          "Praca z Web Forms, jQuery i komponentami Telerik."
         ]
       },
       {
@@ -63,8 +65,8 @@
         "projectUrl": "https://www.profesal.pl",
         "projectName": "Profesal",
         "responsibilities": [
-          "Built internal tools supporting CRM application dev team.",
-          "Worked with .NET, WinForms, MSSQL Server, T-SQL."
+          "Tworzenie narzędzi wspierających zespół CRM.",
+          "Praca z .NET, WinForms, MSSQL Server, T-SQL."
         ]
       }
     ]
@@ -78,39 +80,44 @@
     "title": "Umiejętności",
     "categories": [
       {
-        "name": "Languages",
-        "items": [
-          "C#",
-          "JavaScript",
-          "TypeScript",
-          "T-SQL"
-        ]
-      },
-      {
-        "name": "Backend & APIs",
+        "name": "Backend, API i komunikacja",
         "items": [
           "ASP.NET",
+          ".NET 4.6–9",
+          "Web Api",
           "REST APIs",
           "Entity Framework",
           "EF Core",
-          "Redis",
-          "SignalR"
+          "Microsoft SQL Server",
+          "MassTransit",
+          "RabbitMQ",
+          "Hangfire",
+          "SignalR",
+          "Auth0",
+          "SagePay"
         ]
       },
       {
-        "name": "Frameworks & Frontend",
+        "name": "Frontend i frameworki UI",
         "items": [
-          ".NET 4.6–9",
-          "Angular",
-          "AngularJS",
-          "jQuery",
+          "HTML",
+          "CSS",
+          "Sass",
           "Tailwind",
+          "AngularJS-Angular20",
+          "KnockoutJs",
+          "Blazor",
+          "jQuery",
           "PrimeNG",
-          "Web Forms"
+          "Angular Material",
+          "Web Forms",
+          "MVC",
+          "MVVM",
+          "Projektowanie Responsywne (RWD)"
         ]
       },
       {
-        "name": "DevOps & Tools",
+        "name": "DevOps, chmura i narzędzia",
         "items": [
           "Azure",
           "Docker",
@@ -119,7 +126,27 @@
           "Team City",
           "Octopus Deploy",
           "Git",
-          "CI/CD",
+          "CI/CD pipelines",
+          "Visual Studio"
+        ]
+      },
+      {
+        "name": "Języki programowania i testowanie",
+        "items": [
+          "C#",
+          "JavaScript",
+          "TypeScript",
+          "T-SQL",
+          "xUnit",
+          "Testy jednostkowe"
+        ]
+      },
+      {
+        "name": "Zasady, wzorce i integracje",
+        "items": [
+          "Zasady SOLID",
+          "Wzorce architektoniczne",
+          "Google Analytics",
           "Mailchimp",
           "Dotdigital"
         ]
@@ -129,5 +156,9 @@
   "downloadAsPdf": "Pobierz jako PDF",
   "print": "Drukuj",
   "rodoTitle": "RODO",
-  "rodoDisclaimer": "Wyrażam zgodę na przetwarzanie moich danych osobowych w zakresie przyszłych procesów rekrutacyjnych."
+  "rodoDisclaimer": "Wyrażam zgodę na przetwarzanie moich danych osobowych w zakresie przyszłych procesów rekrutacyjnych.",
+  "languagesTitle": "Języki",
+  "english": "Angielski (biegły)",
+  "polish": "Polski (ojczysty)",
+  "spanish": "Hiszpański (średnio zaawansowany)"
 }

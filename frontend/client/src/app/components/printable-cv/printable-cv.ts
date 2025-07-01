@@ -16,6 +16,7 @@ import { LanguageService } from '../../services/language-service';
 })
 export class PrintableCvComponent {
 
+  expFontSize: string = '14px'
   experience: any[] = [];
   skillCategories: any[] = [];
 
@@ -29,6 +30,13 @@ export class PrintableCvComponent {
   changeLanguage(lang: any): void {
     this.languageService.changeLanguage(lang);
     this.loadTranslatedExperience();
+
+    if (lang.value === 'pl') {
+      this.expFontSize = '13px'
+    }
+    else {
+      this.expFontSize = '14px'
+    }
   }
 
   loadTranslatedExperience(): void {

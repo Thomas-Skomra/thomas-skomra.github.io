@@ -70,7 +70,6 @@
 
       <!-- Avatar -->
       <img src="avatar.jpg"
-           alt="Profile Photo"
            class="mx-auto h-32 w-32 rounded-full object-cover shadow-lg" />
 
       <!-- Contact Info -->
@@ -105,7 +104,7 @@
       <!-- Hero / Summary -->
       <section class="bg-gray-100 p-6 md:p-12">
         <div class="mx-auto max-w-4xl text-center">
-          <h1 class="mb-4 text-3xl font-bold">{{ 'summary.title' | translate }}</h1>
+          <h1 class="mb-4 text-3xl font-bold">{{ 'summary.jobTitle' | translate }}</h1>
           <p class="text-lg">{{ 'summary.description' | translate }}</p>
         </div>
       </section>
@@ -180,6 +179,18 @@
           <div>
             <p class="font-bold">{{ 'education.school' | translate }}</p>
             <p>{{ 'education.degree' | translate }}</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Languages Section -->
+      <section class="p-6 md:p-12">
+        <div class="mx-auto max-w-4xl">
+          <h2 class="mb-4 text-2xl font-semibold">{{ 'languagesTitle' | translate }}</h2>
+          <div>
+            <p>{{ 'english' | translate }}</p>
+            <p>{{ 'polish' | translate }}</p>
+            <p>{{ 'spanish' | translate }}</p>
           </div>
         </div>
       </section>
