@@ -64,120 +64,127 @@
     </button>
   </div>
 
-  <section class="theme-section flex flex-col items-center gap-6 rounded-lg p-6 shadow-md md:flex-row">
-    <!-- Avatar -->
-    <img src="avatar.jpg"
-         alt="Profile Photo"
-         class="h-32 w-32 rounded-full object-cover shadow-lg" />
+  <div class="lg:flex">
 
-    <!-- Contact Info -->
-    <div class="space-y-2 text-center md:text-left">
-      <h1 class="text-2xl font-bold">{{ 'personalInfo.name' | translate }}</h1>
+    <section class="w-full items-center gap-6 self-start rounded-lg bg-white p-6 shadow-md lg:shadow-right-only lg:sticky lg:top-0 lg:h-screen lg:basis-[25%] lg:rounded-none">
 
-      <p class="flex items-center">
-        <i class="material-icons">location_on</i>
-        <span class="ml-2">{{ 'personalInfo.location' | translate }}</span>
-      </p>
-      
-      <a class="flex items-center" href="tel:{{ 'personalInfo.mobile' | translate }}">
-        <i class="material-icons">phone</i>
-        <span class="ml-2">{{ 'personalInfo.mobile' | translate }}</span>
-      </a>
-      
-      <a class="flex items-center" href="mailto:{{ 'personalInfo.email' | translate }}">
-        <i class="material-icons">email</i>
-        <span class="ml-2">{{ 'personalInfo.email' | translate }}</span>
-      </a>
-      
-      <a class="flex items-center break-words" href="https://www.linkedin.com/in/thomas-skomra" target="_blank">
-        <span class="material-icons">language</span>
-        <span class="ml-2 text-blue-600 hover:underline">linkedin.com/in/thomas-skomra</span>
-      </a>
-      
-    </div>
-  </section>
+      <!-- Avatar -->
+      <img src="avatar.jpg"
+           alt="Profile Photo"
+           class="mx-auto h-32 w-32 rounded-full object-cover shadow-lg" />
 
-  <!-- Hero / Summary -->
-  <section class="bg-gray-100 p-6 md:p-12">
-    <div class="mx-auto max-w-4xl text-center">
-      <h1 class="mb-4 text-3xl font-bold">{{ 'summary.title' | translate }}</h1>
-      <p class="text-lg">{{ 'summary.description' | translate }}</p>
-    </div>
-  </section>
+      <!-- Contact Info -->
+      <div class="space-y-2">
 
-  <!-- Skills Section -->
-  <section class="p-6 md:p-12">
-    <div class="mx-auto max-w-4xl">
-      <h2 class="mb-4 text-2xl font-semibold">{{ 'skills.title' | translate }}</h2>
-      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <div *ngFor="let skillCategory of skillCategories">
-          <h3 class="font-semibold">{{ skillCategory.name }}</h3>
-          <p>{{ skillCategory.items.join(', ') }}</p>
-        </div>
+        <h1 class="text-center text-2xl font-bold">{{ 'personalInfo.name' | translate }}</h1>
+
+        <span class="flex items-center text-left">
+          <i class="material-icons">location_on</i>
+          <span class="ml-2">{{ 'personalInfo.location' | translate }}</span>
+        </span>
+
+        <a class="flex items-center" href="tel:{{ 'personalInfo.mobile' | translate }}">
+          <i class="material-icons">phone</i>
+          <span class="ml-2">{{ 'personalInfo.mobile' | translate }}</span>
+        </a>
+
+        <a class="flex items-center" href="mailto:{{ 'personalInfo.email' | translate }}">
+          <i class="material-icons">email</i>
+          <span class="ml-2">{{ 'personalInfo.email' | translate }}</span>
+        </a>
+
+        <a class="flex items-center break-words" href="https://www.linkedin.com/in/thomas-skomra" target="_blank">
+          <span class="material-icons">language</span>
+          <span class="ml-2 text-blue-600 hover:underline">linkedin.com/in/thomas-skomra</span>
+        </a>
+
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Experience Section -->
-  <section class="hidden bg-gray-100 p-6 md:block md:p-12">
-    <div class="mx-auto max-w-4xl">
-      <h2 class="mb-6 text-2xl font-semibold">{{ 'experience.title' | translate }}</h2>
+    <div class="w-full lg:basis-[75%]">
+      <!-- Hero / Summary -->
+      <section class="bg-gray-100 p-6 md:p-12">
+        <div class="mx-auto max-w-4xl text-center">
+          <h1 class="mb-4 text-3xl font-bold">{{ 'summary.title' | translate }}</h1>
+          <p class="text-lg">{{ 'summary.description' | translate }}</p>
+        </div>
+      </section>
 
-      <p-timeline [value]="experience" align="alternate" styleClass="customized-timeline">
-        <ng-template pTemplate="content" let-job>
-          <div class="mb-6">
-            <h3 class="text-xl font-bold">{{ job.title }} – {{ job.company }}</h3>
-            <p class="mb-2 text-sm italic">{{ job.location }} | {{ job.period }}</p>
+      <!-- Skills Section -->
+      <section class="p-6 md:p-12">
+        <div class="mx-auto max-w-4xl">
+          <h2 class="mb-4 text-2xl font-semibold">{{ 'skills.title' | translate }}</h2>
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div *ngFor="let skillCategory of skillCategories">
+              <h3 class="font-semibold">{{ skillCategory.name }}</h3>
+              <p>{{ skillCategory.items.join(', ') }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section class="hidden bg-gray-100 p-6 md:block md:p-12">
+        <div class="mx-auto max-w-4xl">
+          <h2 class="mb-6 text-2xl font-semibold">{{ 'experience.title' | translate }}</h2>
+
+          <p-timeline [value]="experience" align="alternate" styleClass="customized-timeline">
+            <ng-template pTemplate="content" let-job>
+              <div class="mb-6">
+                <h3 class="text-xl font-bold">{{ job.title }} – {{ job.company }}</h3>
+                <p class="mb-2 text-sm italic">{{ job.location }} | {{ job.period }}</p>
+                <!-- Project links -->
+                <div class="space-y-1">
+                  <a href="{{ job.projectUrl }}" target="_blank" class="flex items-center text-sm text-gray-700">
+                    <span class="material-icons">link</span>
+                    <span class="text-blue-600 hover:underline">{{ job.projectName }}</span>
+                  </a>
+                </div>
+                <ul class="list-disc space-y-1 pl-6">
+                  <li *ngFor="let responsibility of job.responsibilities">{{ responsibility }}</li>
+                </ul>
+              </div>
+            </ng-template>
+          </p-timeline>
+        </div>
+      </section>
+
+      <!-- Mobile-friendly stacked version -->
+      <section class="block bg-gray-100 p-6 md:hidden">
+        <div class="mx-auto max-w-4xl">
+          <h2 class="mb-6 text-2xl font-semibold">{{ 'experience.title' | translate }}</h2>
+
+          <div *ngFor="let job of experience" class="mb-6 rounded-lg border border-gray-300 p-4 shadow">
+            <h3 class="text-lg font-bold">{{ job.title }} – {{ job.company }}</h3>
+            <p class="mb-2 text-sm text-gray-600 italic">{{ job.location }} | {{ job.period }}</p>
+
             <!-- Project links -->
-            <div class="space-y-1">
+            <div class="mb-2 space-y-1">
               <a href="{{ job.projectUrl }}" target="_blank" class="flex items-center text-sm text-gray-700">
                 <span class="material-icons">link</span>
                 <span class="text-blue-600 hover:underline">{{ job.projectName }}</span>
               </a>
             </div>
-            <ul class="list-disc space-y-1 pl-6">
+
+            <ul class="list-disc space-y-1 pl-5 text-sm text-gray-700">
               <li *ngFor="let responsibility of job.responsibilities">{{ responsibility }}</li>
             </ul>
           </div>
-        </ng-template>
-      </p-timeline>
-    </div>
-  </section>
-
-  <!-- Mobile-friendly stacked version -->
-  <section class="block bg-gray-100 p-6 md:hidden">
-    <div class="mx-auto max-w-4xl">
-      <h2 class="mb-6 text-2xl font-semibold">{{ 'experience.title' | translate }}</h2>
-
-      <div *ngFor="let job of experience" class="mb-6 rounded-lg border border-gray-300 p-4 shadow">
-        <h3 class="text-lg font-bold">{{ job.title }} – {{ job.company }}</h3>
-        <p class="mb-2 text-sm text-gray-600 italic">{{ job.location }} | {{ job.period }}</p>
-
-        <!-- Project links -->
-        <div class="mb-2 space-y-1">
-          <a href="{{ job.projectUrl }}" target="_blank" class="flex items-center text-sm text-gray-700">
-            <span class="material-icons">link</span>
-            <span class="text-blue-600 hover:underline">{{ job.projectName }}</span>
-          </a>
         </div>
+      </section>
 
-        <ul class="list-disc space-y-1 pl-5 text-sm text-gray-700">
-          <li *ngFor="let responsibility of job.responsibilities">{{ responsibility }}</li>
-        </ul>
-      </div>
+      <!-- Education Section -->
+      <section class="p-6 md:p-12">
+        <div class="mx-auto max-w-4xl">
+          <h2 class="mb-4 text-2xl font-semibold">{{ 'education.title' | translate }}</h2>
+          <div>
+            <p class="font-bold">{{ 'education.school' | translate }}</p>
+            <p>{{ 'education.degree' | translate }}</p>
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
-
-  <!-- Education Section -->
-  <section class="p-6 md:p-12">
-    <div class="mx-auto max-w-4xl">
-      <h2 class="mb-4 text-2xl font-semibold">{{ 'education.title' | translate }}</h2>
-      <div>
-        <p class="font-bold">{{ 'education.school' | translate }}</p>
-        <p>{{ 'education.degree' | translate }}</p>
-      </div>
-    </div>
-  </section>
+  </div>
 </div>
 
 <!-- Printable CV -->

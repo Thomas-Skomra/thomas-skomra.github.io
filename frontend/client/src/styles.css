@@ -4,6 +4,7 @@
 @theme {
   --font-color: #2b2d42;
   --color-default-navy: #2b2d42;
+  --shadow-right-only: 4px 0 6px -1px rgba(0,0,0,0.1);
 }
 
 .p-dropdown {
