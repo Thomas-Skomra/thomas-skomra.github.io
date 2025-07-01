@@ -1,8 +1,133 @@
 {
   "personalInfo": {
     "name": "Tomasz Skomra",
-    "location": "Kraków, Polska / Birmingham, Wielka Brytania",
+    "location": "Zdalnie / Kraków, Polska / Birmingham, Wielka Brytania",
     "mobile": "+48 604 553 313",
-    "email": "thomas.skomra@gmail.com"
-  }
+    "email": "thomas.skomra@gmail.com",
+    "cvUrl": "Tomasz_Skomra_CV.pdf"
+  },
+  "summary": {
+    "title": "Senior Full Stack Developer",
+    "description": "Starszy Inżynier Oprogramowania z ponad 12-letnim doświadczeniem w tworzeniu aplikacji webowych full-stack. Udokumentowana znajomość technologii .NET, Angular oraz skalowalnych architektur. Specjalizuje się w budowie solidnych systemów od podstaw, projektowaniu API, optymalizacji wydajności oraz prowadzeniu projektów od początku do końca."
+  },
+  "experience": {
+    "title": "Doświadczenie zawodowe",
+    "jobs": [
+      {
+        "company": "Cappfinity",
+        "location": "Solihull, UK",
+        "title": "Starszy Inżynier Oprogramowania",
+        "period": "Maj 2016 – Lipiec 2025",
+        "projectUrl": "https://www.strengthsprofile.com",
+        "projectName": "Strengths Profile",
+        "responsibilities": [
+          "Co-architected and built StrengthsProfile platform from scratch.",
+          "Implemented authentication, internal/public APIs.",
+          "Developed basket system with custom discounting.",
+          "Built automated accreditations & email workflows.",
+          "Integrated with Mailchimp and Dotdigital.",
+          "Led migration from .NET 4.6 to .NET 9 using Docker, Kubernetes, Azure DevOps."
+        ]
+      },
+      {
+        "title": "Inżynier Oprogramowania",
+        "company": "Zeel Solutions",
+        "location": "Wolverhampton, UK",
+        "period": "Marzec 2015 – Maj 2016",
+        "projectUrl": "https://www.zeelsolutions.com/zeel-recruiter",
+        "projectName": "Zeel Recruiter",
+        "responsibilities": [
+          "Developed features for recruitment & CRM tools.",
+          "Enhanced application performance and code quality.",
+          "Introduced AngularJS into legacy Web Forms codebase."
+        ]
+      },
+      {
+        "title": "Inżynier Oprogramowania",
+        "company": "CT Global Freight Audit",
+        "location": "Coleshill, UK",
+        "period": "Sierpień 2014 – Luty 2015",
+        "projectUrl": "https://raterequest.giv-audit.com/",
+        "projectName": "Rate Track Rate Request",
+        "responsibilities": [
+          "Created web app for logistics quote requests.",
+          "Optimized T-SQL-heavy stored procedures.",
+          "Worked with Web Forms, jQuery, and Telerik suite."
+        ]
+      },
+      {
+        "title": "Młodszy Programista",
+        "company": "Profesal Sp. z o.o.",
+        "location": "Kraków, Polska",
+        "period": "Lipiec 2013 – Lipiec 2014",
+        "projectUrl": "https://www.profesal.pl",
+        "projectName": "Profesal",
+        "responsibilities": [
+          "Built internal tools supporting CRM application dev team.",
+          "Worked with .NET, WinForms, MSSQL Server, T-SQL."
+        ]
+      }
+    ]
+  },
+  "education": {
+    "title": "Wykształcenie",
+    "school": "Akademia Górniczo-Hutnicza, Kraków",
+    "degree": "2009–2014 – Magister inżynier, Automatyka i Robotyka"
+  },
+  "skills": {
+    "title": "Umiejętności",
+    "categories": [
+      {
+        "name": "Languages",
+        "items": [
+          "C#",
+          "JavaScript",
+          "TypeScript",
+          "T-SQL"
+        ]
+      },
+      {
+        "name": "Backend & APIs",
+        "items": [
+          "ASP.NET",
+          "REST APIs",
+          "Entity Framework",
+          "EF Core",
+          "Redis",
+          "SignalR"
+        ]
+      },
+      {
+        "name": "Frameworks & Frontend",
+        "items": [
+          ".NET 4.6–9",
+          "Angular",
+          "AngularJS",
+          "jQuery",
+          "Tailwind",
+          "PrimeNG",
+          "Web Forms"
+        ]
+      },
+      {
+        "name": "DevOps & Tools",
+        "items": [
+          "Azure",
+          "Docker",
+          "Kubernetes",
+          "Azure DevOps",
+          "Team City",
+          "Octopus Deploy",
+          "Git",
+          "CI/CD",
+          "Mailchimp",
+          "Dotdigital"
+        ]
+      }
+    ]
+  },
+  "downloadAsPdf": "Pobierz jako PDF",
+  "print": "Drukuj",
+  "rodoTitle": "RODO",
+  "rodoDisclaimer": "Wyrażam zgodę na przetwarzanie moich danych osobowych w zakresie przyszłych procesów rekrutacyjnych."
 }

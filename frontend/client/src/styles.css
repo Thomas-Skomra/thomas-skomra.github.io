@@ -1,7 +1,10 @@
+@import 'material-icons/iconfont/material-icons.css';
 @import "tailwindcss";
-/* You can add global styles to this file, and also import other style files */
-@tailwind base;
-@tailwind utilities;
+
+@theme {
+  --font-color: #2b2d42;
+  --color-default-navy: #2b2d42;
+}
 
 .p-dropdown {
   background-color: red !important;

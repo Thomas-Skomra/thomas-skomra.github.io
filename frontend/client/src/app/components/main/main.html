@@ -1,0 +1,187 @@
+﻿<!-- app.component.html -->
+<div class="min-h-screen print:hidden">
+  <!-- Header -->
+  <!--<header class="top-0 z-50 hidden items-center justify-between bg-gray-100 p-4 shadow-md sm:sticky sm:flex">
+
+    <div class="relative ml-auto">
+      <button type="button">Download as PDF</button>
+      <p-dropdown [options]="languageService.languages"
+                  [(ngModel)]="languageService.currentLang"
+                  (onChange)="changeLanguage($event.value)"
+                  optionLabel="label"
+                  dataKey="value"
+                  [showClear]="false">
+        <ng-template let-lang pTemplate="selectedItem">
+          <div class="flex items-center gap-2">
+            <img [src]="lang.icon" alt="" class="h-5 w-5" />
+            <span>{{ lang.label }}</span>
+          </div>
+        </ng-template>
+        <ng-template let-lang pTemplate="item">
+          <div class="flex items-center gap-2">
+            <img [src]="lang.icon" alt="" class="h-5 w-5" />
+            <span>{{ lang.label }}</span>
+          </div>
+        </ng-template>
+      </p-dropdown>
+    </div>
+  </header>-->
+
+  <!-- FAB Wrapper -->
+  <div class="fixed right-4 bottom-4 z-50">
+    <!-- Expanded Options -->
+    <div class="mb-2 flex flex-col items-end space-y-2 transition-all duration-300" *ngIf="fabOpen">
+
+      <!-- Languages -->
+      @for (language of languageService.languages; track language.value) {
+      <button class="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-gray-600"
+              (click)="changeLanguage(language)"
+              title="{{ language.label }}">
+        <img [src]="language.icon"
+             alt=""
+             class="h-full w-full rounded-full object-cover" />
+      </button>
+      }
+
+      <!-- Print -->
+      <button class="bg-darkgray flex h-11 w-11 items-center justify-center rounded-full bg-gray-300 shadow-md hover:bg-gray-700 hover:text-white"
+              (click)="printClick()"
+              title="{{ 'print' | translate }}">
+        <span class="material-icons">print</span>
+      </button>
+
+      <!-- Download as PDF -->
+      <a href="{{ 'personalInfo.cvUrl' | translate }}" download class="flex h-11 w-11 items-center justify-center rounded-full bg-gray-300 shadow-md hover:bg-gray-700 hover:text-white"
+         title="{{ 'downloadAsPdf' | translate }}">
+        <span class="material-icons">picture_as_pdf</span>
+      </a>
+    </div>
+
+    <!-- Main FAB Button -->
+    <button (click)="fabOpen = !fabOpen"
+            class="bg-default-navy flex h-14 w-14 items-center justify-center rounded-full text-3xl leading-none font-bold text-white shadow-lg transition duration-300">
+      <span [ngClass]="{ 'rotate-360': fabOpen, 'rotate-0': !fabOpen }" style="line-height: 0" class="material-icons text-2xl transition-transform duration-300">settings</span>
+    </button>
+  </div>
+
+  <section class="theme-section flex flex-col items-center gap-6 rounded-lg p-6 shadow-md md:flex-row">
+    <!-- Avatar -->
+    <img src="avatar.jpg"
+         alt="Profile Photo"
+         class="h-32 w-32 rounded-full object-cover shadow-lg" />
+
+    <!-- Contact Info -->
+    <div class="space-y-2 text-center md:text-left">
+      <h1 class="text-2xl font-bold">{{ 'personalInfo.name' | translate }}</h1>
+
+      <p class="flex items-center">
+        <i class="material-icons">location_on</i>
+        <span class="ml-2">{{ 'personalInfo.location' | translate }}</span>
+      </p>
+      
+      <a class="flex items-center" href="tel:{{ 'personalInfo.mobile' | translate }}">
+        <i class="material-icons">phone</i>
+        <span class="ml-2">{{ 'personalInfo.mobile' | translate }}</span>
+      </a>
+      
+      <a class="flex items-center" href="mailto:{{ 'personalInfo.email' | translate }}">
+        <i class="material-icons">email</i>
+        <span class="ml-2">{{ 'personalInfo.email' | translate }}</span>
+      </a>
+      
+      <a class="flex items-center break-words" href="https://www.linkedin.com/in/thomas-skomra" target="_blank">
+        <span class="material-icons">language</span>
+        <span class="ml-2 text-blue-600 hover:underline">linkedin.com/in/thomas-skomra</span>
+      </a>
+      
+    </div>
+  </section>
+
+  <!-- Hero / Summary -->
+  <section class="bg-gray-100 p-6 md:p-12">
+    <div class="mx-auto max-w-4xl text-center">
+      <h1 class="mb-4 text-3xl font-bold">{{ 'summary.title' | translate }}</h1>
+      <p class="text-lg">{{ 'summary.description' | translate }}</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="p-6 md:p-12">
+    <div class="mx-auto max-w-4xl">
+      <h2 class="mb-4 text-2xl font-semibold">{{ 'skills.title' | translate }}</h2>
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div *ngFor="let skillCategory of skillCategories">
+          <h3 class="font-semibold">{{ skillCategory.name }}</h3>
+          <p>{{ skillCategory.items.join(', ') }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="hidden bg-gray-100 p-6 md:block md:p-12">
+    <div class="mx-auto max-w-4xl">
+      <h2 class="mb-6 text-2xl font-semibold">{{ 'experience.title' | translate }}</h2>
+
+      <p-timeline [value]="experience" align="alternate" styleClass="customized-timeline">
+        <ng-template pTemplate="content" let-job>
+          <div class="mb-6">
+            <h3 class="text-xl font-bold">{{ job.title }} – {{ job.company }}</h3>
+            <p class="mb-2 text-sm italic">{{ job.location }} | {{ job.period }}</p>
+            <!-- Project links -->
+            <div class="space-y-1">
+              <a href="{{ job.projectUrl }}" target="_blank" class="flex items-center text-sm text-gray-700">
+                <span class="material-icons">link</span>
+                <span class="text-blue-600 hover:underline">{{ job.projectName }}</span>
+              </a>
+            </div>
+            <ul class="list-disc space-y-1 pl-6">
+              <li *ngFor="let responsibility of job.responsibilities">{{ responsibility }}</li>
+            </ul>
+          </div>
+        </ng-template>
+      </p-timeline>
+    </div>
+  </section>
+
+  <!-- Mobile-friendly stacked version -->
+  <section class="block bg-gray-100 p-6 md:hidden">
+    <div class="mx-auto max-w-4xl">
+      <h2 class="mb-6 text-2xl font-semibold">{{ 'experience.title' | translate }}</h2>
+
+      <div *ngFor="let job of experience" class="mb-6 rounded-lg border border-gray-300 p-4 shadow">
+        <h3 class="text-lg font-bold">{{ job.title }} – {{ job.company }}</h3>
+        <p class="mb-2 text-sm text-gray-600 italic">{{ job.location }} | {{ job.period }}</p>
+
+        <!-- Project links -->
+        <div class="mb-2 space-y-1">
+          <a href="{{ job.projectUrl }}" target="_blank" class="flex items-center text-sm text-gray-700">
+            <span class="material-icons">link</span>
+            <span class="text-blue-600 hover:underline">{{ job.projectName }}</span>
+          </a>
+        </div>
+
+        <ul class="list-disc space-y-1 pl-5 text-sm text-gray-700">
+          <li *ngFor="let responsibility of job.responsibilities">{{ responsibility }}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="p-6 md:p-12">
+    <div class="mx-auto max-w-4xl">
+      <h2 class="mb-4 text-2xl font-semibold">{{ 'education.title' | translate }}</h2>
+      <div>
+        <p class="font-bold">{{ 'education.school' | translate }}</p>
+        <p>{{ 'education.degree' | translate }}</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Printable CV -->
+<div class="hidden print:block">
+  <app-printable-cv></app-printable-cv>
+</div>
+
