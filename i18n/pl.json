@@ -2,7 +2,7 @@
   "personalInfo": {
     "title": "Kontakt",
     "name": "Tomasz Skomra",
-    "location": "Zdalnie / Kraków, Polska / Birmingham, Wielka Brytania",
+    "location": "Zdalnie | Kraków, Polska | Birmingham, Wielka Brytania",
     "mobile": "+48 604 553 313",
     "email": "thomas.skomra@gmail.com",
     "cvUrl": "Tomasz_Skomra_CV.pdf"
@@ -104,7 +104,7 @@
           "CSS",
           "Sass",
           "Tailwind",
-          "AngularJS-Angular20",
+          "AngularJS - Angular 20",
           "KnockoutJs",
           "Blazor",
           "jQuery",
