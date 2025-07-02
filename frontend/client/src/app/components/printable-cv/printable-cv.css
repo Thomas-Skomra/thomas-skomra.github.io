@@ -1,40 +1,32 @@
-.printable-cv
-{
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background: #ccc;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 .a4-sim {
   width: 210mm;
   height: 297mm;
   background: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   color: #323b4c;
+  margin: 0;
+  padding: 0;
 }
 
 @media print {
-
   * {
     -webkit-print-color-adjust: exact !important; /* Chrome, Safari 6 – 15.3, Edge */
     color-adjust: exact !important; /* Firefox 48 – 96 */
     print-color-adjust: exact !important; /* Firefox 97+, Safari 15.4+ */
   }
-  
-  .a4-sim {
-    box-shadow: none;
-    margin: 0;
+
+  body, html
+  {
+      margin: 0;
   }
 }
 
 @page {
-    margin: 0;
+  margin: 0;
+  padding: 0;
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
 }
 
 .bottom-border {

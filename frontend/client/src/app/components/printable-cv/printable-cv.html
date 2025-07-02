@@ -1,151 +1,149 @@
-﻿<div class="printable-cv">
-  <div class="a4-sim">
+<div class="a4-sim h-full" [ngClass]="{ 'hidden': !isStandalone, 'print:block': !isStandalone }">
 
-    <!-- Languages -->
-    <div class="fixed right-4 bottom-4 z-50 print:hidden">
-      @for (language of languageService.languages; track language.value) {
-        <button class="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-gray-600"
-                (click)="changeLanguage(language)"
-                title="{{ language.label }}">
-          <img [src]="language.icon"
-               alt=""
-               class="h-full w-full rounded-full object-cover" />
-        </button>
-      }
+  <!-- Languages -->
+  <div class="fixed right-4 bottom-4 z-50 print:hidden">
+    @for (language of languageService.languages; track language.value) {
+      <button class="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-gray-600"
+              (click)="changeLanguage(language)"
+              title="{{ language.label }}">
+        <img [src]="language.icon"
+             alt=""
+             class="h-full w-full rounded-full object-cover" />
+      </button>
+    }
+  </div>
+
+  <div class="bg-default-navy flex h-26 w-full flex-col items-center justify-center text-white">
+    <div class="items-start">
+      <h1 class="ml-65 text-4xl font-bold uppercase">
+        {{ 'personalInfo.name' | translate }}
+      </h1>
+      <h2 class="ml-65 text-xl uppercase">
+        {{ 'summary.jobTitle' | translate }}
+      </h2>
     </div>
+  </div>
 
-    <div class="bg-default-navy flex h-26 w-full flex-col items-center justify-center text-white">
-      <div class="items-start">
-        <h1 class="ml-65 text-4xl font-bold uppercase">
-          {{ 'personalInfo.name' | translate }}
-        </h1>
-        <h2 class="ml-65 text-xl uppercase">
-          {{ 'summary.jobTitle' | translate }}
-        </h2>
-      </div>
-    </div>
+  <div class="flex h-full">
 
-    <div class="flex">
+    <!-- Sidebar -->
+    <aside class="text-md flex w-[40%] flex-col items-center bg-[#E4E4E4] p-6">
 
-      <!-- Sidebar -->
-      <aside class="text-md flex w-[40%] flex-col items-center bg-[#E4E4E4] p-6">
+      <img src="avatar.jpg" alt="Profile Photo" class="-mt-30 mb-4 h-[200px] w-[200px] rounded-full border-4 border-white object-cover">
 
-        <img src="avatar.jpg" alt="Profile Photo" class="-mt-30 mb-4 h-[200px] w-[200px] rounded-full border-4 border-white object-cover">
+      <div class="w-full space-y-3 text-black">
 
-        <div class="w-full space-y-3 text-black">
+        <div>
+          <h2 class="mb-2 border-b border-gray-400 text-sm font-bold uppercase">{{ 'personalInfo.title' | translate }}</h2>
 
-          <div>
-            <h2 class="mb-2 border-b border-gray-400 text-sm font-semibold uppercase">{{ 'personalInfo.title' | translate }}</h2>
-
-            <div class="text-sm">
-              <a href="tel:{{ 'personalInfo.mobile' | translate }}">
-                <p class="flex items-center pb-1">
-                  <span class="material-icons">call</span>
-                  <span class="ml-2">{{ 'personalInfo.mobile' | translate }}</span>
-                </p>
-              </a>
-
-              <a href="mailto:{{ 'personalInfo.email' | translate }}">
-                <p class="flex items-center pb-1">
-                  <span class="material-icons">email</span>
-                  <span class="ml-2">{{ 'personalInfo.email' | translate }}</span>
-                </p>
-              </a>
-
+          <div class="text-sm">
+            <a href="tel:{{ 'personalInfo.mobile' | translate }}">
               <p class="flex items-center pb-1">
-                <span class="material-icons">location_on</span>
-                <span class="ml-2">{{ 'personalInfo.location' | translate }}</span>
+                <span class="material-icons">call</span>
+                <span class="ml-2">{{ 'personalInfo.mobile' | translate }}</span>
               </p>
+            </a>
 
-              <a href="https://www.linkedin.com/in/thomas-skomra" target="_blank">
-                <p class="flex items-center pb-1 break-words">
-                  <span class="material-icons">language</span>
-                  <span class="ml-2 text-blue-600 hover:underline">linkedin.com/in/thomas-skomra</span>
-                </p>
-              </a>
+            <a href="mailto:{{ 'personalInfo.email' | translate }}">
+              <p class="flex items-center pb-1">
+                <span class="material-icons">email</span>
+                <span class="ml-2">{{ 'personalInfo.email' | translate }}</span>
+              </p>
+            </a>
 
-              <a href="https://thomas-skomra.github.io/" target="_blank">
-                <p class="flex items-center pb-1 break-words">
-                  <span class="material-icons">language</span>
-                  <span class="ml-2 text-blue-600 hover:underline">thomas-skomra.github.io</span>
-                </p>
-              </a>
-            </div>
+            <p class="flex items-center pb-1">
+              <span class="material-icons">location_on</span>
+              <span class="ml-2">{{ 'personalInfo.location' | translate }}</span>
+            </p>
+
+            <a href="https://www.linkedin.com/in/thomas-skomra" target="_blank">
+              <p class="flex items-center pb-1 break-words">
+                <span class="material-icons">language</span>
+                <span class="ml-2 text-blue-600 hover:underline">linkedin.com/in/thomas-skomra</span>
+              </p>
+            </a>
+
+            <a href="https://thomas-skomra.github.io/" target="_blank">
+              <p class="flex items-center pb-1 break-words">
+                <span class="material-icons">language</span>
+                <span class="ml-2 text-blue-600 hover:underline">thomas-skomra.github.io</span>
+              </p>
+            </a>
           </div>
-
-          <div>
-            <h2 class="mb-2 border-b border-gray-400 text-sm font-semibold uppercase">{{ 'skills.title' | translate }}</h2>
-            <div *ngFor="let skillCategory of skillCategories">
-              <h3 class="pt-0.25 pb-0.25 text-sm font-semibold">{{ skillCategory.name }}</h3>
-              <p class="text-sm">{{ skillCategory.items.join(', ') }}</p>
-            </div>
-          </div>
-
-          <div>
-            <h2 class="mb-2 border-b border-gray-400 text-sm font-semibold uppercase">{{ 'languagesTitle' | translate }}</h2>
-            <p class="text-sm">{{ 'english' | translate }}</p>
-            <p class="text-sm">{{ 'polish' | translate }}</p>
-            <p class="text-sm">{{ 'spanish' | translate }}</p>
-          </div>
-
-          <div>
-            <h2 class="mb-2 border-b border-gray-400 text-sm font-semibold uppercase">{{ 'rodoTitle' | translate }}</h2>
-            <p class="text-sm">{{ 'rodoDisclaimer' | translate }}</p>
-          </div>
-
         </div>
-      </aside>
 
-      <!-- Main Content -->
-      <main class="w-[60%] p-8 pt-4 text-sm text-gray-800">
-
-        <section class="mb-3">
-          <h2 class="mb-2 border-b border-gray-400 pb-1 text-sm font-semibold uppercase">{{ 'summary.title' | translate }}</h2>
-
-          <p>
-            {{ 'summary.description' | translate }}
-          </p>
-
-        </section>
-
-        <section class="mb-3">
-          <h2 class="mb-2 border-b border-gray-400 pb-1 font-semibold uppercase">{{ 'experience.title' | translate }}</h2>
-
-          <p-timeline [value]="experience" styleClass="cv-timeline">
-            <ng-template pTemplate="content" let-job>
-              <div class="mb-1">
-                <h3 class="text-base font-bold">{{ job.title }} – {{ job.company }}</h3>
-                <p class="mb-1 italic">{{ job.location }} | {{ job.period }}</p>
-
-                <!-- Project links -->
-                <div class="space-y-1">
-                  <a href="{{ job.projectUrl }}" target="_blank" class="flex items-center text-gray-700">
-                    <span class="material-icons">link</span>
-                    <span class="text-blue-600 hover:underline">{{ job.projectName }}</span>
-                  </a>
-                </div>
-
-                <ul class="list-disc space-y-1 pl-4" [ngClass]="'text-[' + expFontSize + ']'">
-                  <li class="mb-0" *ngFor="let responsibility of job.responsibilities">{{ responsibility }}</li>
-                </ul>
-
-              </div>
-            </ng-template>
-          </p-timeline>
-
-        </section>
-
-        <section class="mb-3">
-          <h2 class="mb-2 border-b border-gray-400 pb-1 font-semibold uppercase">{{ 'education.title' | translate }}</h2>
-
-          <div>
-            <p class="font-bold">{{ 'education.school' | translate }}</p>
-            <p>{{ 'education.degree' | translate }}</p>
+        <div>
+          <h2 class="mb-2 border-b border-gray-400 text-sm font-bold uppercase">{{ 'skills.title' | translate }}</h2>
+          <div *ngFor="let skillCategory of skillCategories">
+            <h3 class="pt-0.25 pb-0.25 text-sm font-bold">{{ skillCategory.name }}</h3>
+            <p class="text-sm">{{ skillCategory.items.join(', ') }}</p>
           </div>
+        </div>
 
-        </section>
+        <div>
+          <h2 class="mb-2 border-b border-gray-400 text-sm font-bold uppercase">{{ 'languagesTitle' | translate }}</h2>
+          <p class="text-sm">{{ 'english' | translate }}</p>
+          <p class="text-sm">{{ 'polish' | translate }}</p>
+          <p class="text-sm">{{ 'spanish' | translate }}</p>
+        </div>
 
-      </main>
-    </div>
+        <div>
+          <h2 class="mb-2 border-b border-gray-400 text-sm font-bold uppercase">{{ 'rodoTitle' | translate }}</h2>
+          <p class="text-sm">{{ 'rodoDisclaimer' | translate }}</p>
+        </div>
+
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="w-[60%] p-8 pt-4 text-sm text-gray-800">
+
+      <section class="mb-3">
+        <h2 class="mb-2 border-b border-gray-400 pb-1 text-sm font-semibold uppercase">{{ 'summary.title' | translate }}</h2>
+
+        <p>
+          {{ 'summary.description' | translate }}
+        </p>
+
+      </section>
+
+      <section class="mb-3">
+        <h2 class="mb-2 border-b border-gray-400 pb-1 font-semibold uppercase">{{ 'experience.title' | translate }}</h2>
+
+        <p-timeline [value]="experience" styleClass="cv-timeline">
+          <ng-template pTemplate="content" let-job>
+            <div class="mb-1">
+              <h3 class="text-base font-bold">{{ job.title }} – {{ job.company }}</h3>
+              <p class="mb-1 italic">{{ job.location }} | {{ job.period }}</p>
+
+              <!-- Project links -->
+              <div class="space-y-1">
+                <a href="{{ job.projectUrl }}" target="_blank" class="flex items-center text-gray-700">
+                  <span class="material-icons">link</span>
+                  <span class="text-blue-600 hover:underline">{{ job.projectName }}</span>
+                </a>
+              </div>
+
+              <ul class="list-disc space-y-1 pl-4" [ngClass]="'text-[' + expFontSize + ']'">
+                <li class="mb-0" *ngFor="let responsibility of job.responsibilities">{{ responsibility }}</li>
+              </ul>
+
+            </div>
+          </ng-template>
+        </p-timeline>
+
+      </section>
+
+      <section class="mb-3">
+        <h2 class="mb-2 border-b border-gray-400 pb-1 font-semibold uppercase">{{ 'education.title' | translate }}</h2>
+
+        <div>
+          <p class="font-bold">{{ 'education.school' | translate }}</p>
+          <p>{{ 'education.degree' | translate }}</p>
+        </div>
+
+      </section>
+
+    </main>
   </div>
 </div>

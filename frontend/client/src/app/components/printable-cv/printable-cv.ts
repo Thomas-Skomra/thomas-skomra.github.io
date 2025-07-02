@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { TimelineModule } from 'primeng/timeline';
 import { LanguageService } from '../../services/language-service';
@@ -16,6 +16,7 @@ import { LanguageService } from '../../services/language-service';
 })
 export class PrintableCvComponent {
 
+  @Input() isStandalone: boolean = true;
   expFontSize: string = '14px'
   experience: any[] = [];
   skillCategories: any[] = [];
