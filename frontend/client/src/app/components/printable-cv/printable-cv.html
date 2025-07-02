@@ -1,10 +1,10 @@
-<div class="a4-sim h-full" [ngClass]="{ 'hidden': !isStandalone, 'print:block': !isStandalone }">
+﻿<div class="a4-sim h-full" [ngClass]="{ 'hidden': !isStandalone, 'print:block': !isStandalone }">
 
   <!-- Languages -->
   <div class="fixed right-4 bottom-4 z-50 print:hidden">
     @for (language of languageService.languages; track language.value) {
       <button class="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-gray-600"
-              (click)="changeLanguage(language)"
+              (click)="languageService.changeLanguage(language)"
               title="{{ language.label }}">
         <img [src]="language.icon"
              alt=""
@@ -96,7 +96,7 @@
     </aside>
 
     <!-- Main Content -->
-    <main class="w-[60%] p-8 pt-4 text-sm text-gray-800">
+    <main class="w-[60%] p-8 pt-4 pr-4 text-sm text-gray-800">
 
       <section class="mb-3">
         <h2 class="mb-2 border-b border-gray-400 pb-1 text-sm font-semibold uppercase">{{ 'summary.title' | translate }}</h2>
@@ -124,7 +124,7 @@
                 </a>
               </div>
 
-              <ul class="list-disc space-y-1 pl-4" [ngClass]="'text-[' + expFontSize + ']'">
+              <ul class="list-disc space-y-1 pl-4" [style.fontSize.px]="expFontSize">
                 <li class="mb-0" *ngFor="let responsibility of job.responsibilities">{{ responsibility }}</li>
               </ul>
 

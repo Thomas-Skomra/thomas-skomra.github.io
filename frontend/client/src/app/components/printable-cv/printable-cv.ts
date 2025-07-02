@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { TimelineModule } from 'primeng/timeline';
 import { LanguageService } from '../../services/language-service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-printable-cv',
@@ -14,30 +15,36 @@ import { LanguageService } from '../../services/language-service';
   templateUrl: './printable-cv.html',
   styleUrl: './printable-cv.css'
 })
-export class PrintableCvComponent {
+export class PrintableCvComponent implements OnInit, OnDestroy {
 
   @Input() isStandalone: boolean = true;
-  expFontSize: string = '14px'
+  expFontSize: number = 14
   experience: any[] = [];
   skillCategories: any[] = [];
+  private languageChanged!: Subscription;
 
   constructor(
     private translate: TranslateService,
     public languageService: LanguageService
   ) {
-      this.loadTranslatedExperience();
+    
   }
 
-  changeLanguage(lang: any): void {
-    this.languageService.changeLanguage(lang);
-    this.loadTranslatedExperience();
+  ngOnInit() {
+    this.languageChanged = this.languageService.languageChanged.subscribe((lang) => {
+      this.loadTranslatedExperience();
 
-    if (lang.value === 'pl') {
-      this.expFontSize = '13px'
-    }
-    else {
-      this.expFontSize = '14px'
-    }
+      if (lang === 'pl') {
+        this.expFontSize = 13;
+      }
+      else {
+        this.expFontSize = 14;
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.languageChanged.unsubscribe();
   }
 
   loadTranslatedExperience(): void {

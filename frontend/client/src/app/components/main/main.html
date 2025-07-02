@@ -9,7 +9,7 @@
       <!-- Languages -->
       @for (language of languageService.languages; track language.value) {
       <button class="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-gray-600"
-              (click)="changeLanguage(language)"
+              (click)="languageService.changeLanguage(language)"
               title="{{ language.label }}">
         <img [src]="language.icon"
              alt=""
