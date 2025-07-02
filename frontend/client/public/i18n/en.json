@@ -2,7 +2,7 @@
   "personalInfo": {
     "title": "Contact",
     "name": "Thomas Skomra",
-    "location": "Remote / Birmingham, United Kingdom / Cracow, Poland",
+    "location": "Remote | Birmingham, United Kingdom | Cracow, Poland",
     "mobile": "+44 7927 262552",
     "email": "thomas.skomra@gmail.com",
     "cvUrl": "Thomas_Skomra_CV.pdf"
@@ -10,7 +10,7 @@
   "summary": {
     "title": "Profile",
     "jobTitle": "Senior Full Stack Developer",
-    "description": "Senior Software Engineer with 12+ years of experience in full-stack web development. Proven expertise in .NET, Angular, and scalable architecture. Skilled in building robust systems from the ground up, designing APIs, optimizing performance, and leading end-to-end delivery. Open for remote contracts on B2B basis. No visa sponsorship required."
+    "description": "Senior Software Engineer with over 12 years of experience in full-stack web development. Proven expertise in .NET, Angular, and scalable architecture. Skilled in building robust systems from the ground up, designing APIs, optimizing performance, and leading end-to-end delivery. Open for remote contracts on a B2B basis. No visa sponsorship required."
   },
   "experience": {
     "title": "Professional Experience",
@@ -104,7 +104,7 @@
           "CSS",
           "Sass",
           "Tailwind",
-          "AngularJS-Angular 20",
+          "AngularJS - Angular 20",
           "KnockoutJs",
           "Blazor",
           "jQuery",
