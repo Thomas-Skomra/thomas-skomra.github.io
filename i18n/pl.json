@@ -16,19 +16,29 @@
     "title": "Doświadczenie zawodowe",
     "jobs": [
       {
+        "company": "Miquido",
+        "location": "Zdalnie / Kraków, Polska",
+        "title": "Senior Software Developer",
+        "period": "Październik 2025 – Kwiecień 2026",
+        "projectUrl": "https://www.miquido.com/",
+        "projectName": "Miquido",
+        "responsibilities": [
+          "Współprojektowanie i realizacja backendowego API dla klienta z branży petrochemicznej; architektura, modularność i standardy rozwoju.",
+          "Implementacja kluczowych modułów i integracji LDAP; zastosowanie CQRS, Mediator i messaging (Wolverine).",
+          "Konfiguracja observability (Serilog, OpenTelemetry); wykorzystanie AI (Cursor AI, Codex) do przyspieszenia developmentu."
+        ]
+      },
+      {
         "company": "Cappfinity",
         "location": "Zdalnie / Solihull, UK",
         "title": "Starszy Inżynier Oprogramowania",
-        "period": "Maj 2016 – Lipiec 2025",
+        "period": "Maj 2016 – Sierpień 2025",
         "projectUrl": "https://www.strengthsprofile.com",
         "projectName": "Strengths Profile",
         "responsibilities": [
-          "Współprojektowanie i budowa platformy StrengthsProfile od podstaw.",
-          "Implementacja uwierzytelniania oraz wewnętrznych/publicznych API.",
-          "Rozwój systemu koszyka z niestandardowym rabatowaniem.",
-          "Automatyzacja procesu akredytacji i wysyłki wiadomości e-mail.",
-          "Integracja z Mailchimp i Dotdigital.",
-          "Migracja z .NET 4.6 do .NET 9 z użyciem Docker, Kubernetes, Azure DevOps."
+          "Współarchitektura i rozwój platformy StrengthsProfile; implementacja uwierzytelniania i API (wewnętrzne/publiczne).",
+          "System koszyka z niestandardowym rabatowaniem; automatyzacja akredytacji i workflow email.",
+          "Integracje z Mailchimp i Dotdigital; migracja z .NET 4.6 do .NET 9 (Docker, Kubernetes, Azure DevOps)."
         ]
       },
       {
@@ -83,18 +93,20 @@
         "name": "Backend, API i komunikacja",
         "items": [
           "ASP.NET",
-          ".NET 4.6–9",
+          ".NET 4.6–10",
           "Web Api",
           "REST APIs",
           "Entity Framework",
           "EF Core",
           "Microsoft SQL Server",
+          "Wolverine",
           "MassTransit",
           "RabbitMQ",
           "Hangfire",
           "SignalR",
           "Auth0",
-          "SagePay"
+          "SagePay",
+          "Swagger/OpenApi"
         ]
       },
       {
@@ -119,6 +131,8 @@
       {
         "name": "DevOps, chmura i narzędzia",
         "items": [
+          "Visual Studio",
+          "Cursor AI",
           "Azure",
           "Docker",
           "Kubernetes",
@@ -126,8 +140,7 @@
           "Team City",
           "Octopus Deploy",
           "Git",
-          "CI/CD pipelines",
-          "Visual Studio"
+          "CI/CD pipelines"
         ]
       },
       {
@@ -138,7 +151,8 @@
           "TypeScript",
           "T-SQL",
           "xUnit",
-          "Testy jednostkowe"
+          "Testy jednostkowe",
+          "Testy integracyjne"
         ]
       },
       {
@@ -146,6 +160,8 @@
         "items": [
           "Zasady SOLID",
           "Wzorce architektoniczne",
+          "CQRS",
+          "Mediator",
           "Google Analytics",
           "Mailchimp",
           "Dotdigital"
