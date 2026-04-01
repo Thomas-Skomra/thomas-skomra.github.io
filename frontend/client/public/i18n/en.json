@@ -16,19 +16,29 @@
     "title": "Professional Experience",
     "jobs": [
       {
+        "company": "Miquido",
+        "location": "Remote / Cracow, Poland",
+        "title": "Senior Software Developer",
+        "period": "October 2025 – April 2026",
+        "projectUrl": "https://www.miquido.com/",
+        "projectName": "Miquido",
+        "responsibilities": [
+          "Co-designed and delivered backend API for a petrochemical client; defined architecture, modular structure and development standards.",
+          "Implemented core system modules and LDAP integration; applied CQRS, Mediator and messaging using Wolverine.",
+          "Set up observability with Serilog and OpenTelemetry; leveraged AI tools (Cursor AI, Codex) to accelerate development."
+        ]
+      },
+      {
         "company": "Cappfinity",
         "location": "Remote / Solihull, UK",
         "title": "Senior Software Engineer",
-        "period": "May 2016 – July 2025",
+        "period": "May 2016 – August 2025",
         "projectUrl": "https://www.strengthsprofile.com",
         "projectName": "Strengths Profile",
         "responsibilities": [
-          "Co-architected and built StrengthsProfile platform from scratch.",
-          "Implemented authentication, internal/public APIs.",
-          "Developed basket system with custom discounting.",
-          "Built automated accreditations & email workflows.",
-          "Integrated with Mailchimp and Dotdigital.",
-          "Migrated from .NET 4.6 to .NET 9 using Docker, Kubernetes, Azure DevOps."
+          "Co-architected and built StrengthsProfile platform; implemented authentication and internal/public APIs.",
+          "Developed basket system with custom discounting; built automated accreditations and email workflows.",
+          "Integrated with Mailchimp and Dotdigital; migrated from .NET 4.6 to .NET 9 using Docker, Kubernetes and Azure DevOps."
         ]
       },
       {
@@ -83,18 +93,20 @@
         "name": "Backend, APIs & Messaging",
         "items": [
           "ASP.NET",
-          ".NET 4.6–9",
+          ".NET 4.6–10",
           "Web Api",
           "REST APIs",
           "Entity Framework",
           "EF Core",
           "Microsoft SQL Server",
+          "Wolverine",
           "MassTransit",
           "RabbitMQ",
           "Hangfire",
           "SignalR",
           "Auth0",
-          "SagePay"
+          "SagePay",
+          "Swagger/OpenApi"
         ]
       },
       {
@@ -119,6 +131,8 @@
       {
         "name": "DevOps, Cloud & Tooling",
         "items": [
+          "Visual Studio",
+          "Cursor AI",
           "Azure",
           "Docker",
           "Kubernetes",
@@ -126,8 +140,7 @@
           "Team City",
           "Octopus Deploy",
           "Git",
-          "CI/CD pipelines",
-          "Visual Studio"
+          "CI/CD pipelines"
         ]
       },
       {
@@ -138,7 +151,8 @@
           "TypeScript",
           "T-SQL",
           "xUnit",
-          "Unit Testing"
+          "Unit Testing",
+          "Integration Testing"
         ]
       },
       {
@@ -146,6 +160,8 @@
         "items": [
           "SOLID Principles",
           "Architecture Patterns",
+          "CQRS",
+          "Mediator",
           "Google Analytics",
           "Mailchimp",
           "Dotdigital"

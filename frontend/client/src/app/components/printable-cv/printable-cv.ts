@@ -35,7 +35,7 @@ export class PrintableCvComponent implements OnInit, OnDestroy {
       this.loadTranslatedExperience();
 
       if (lang === 'pl') {
-        this.expFontSize = 13;
+        this.expFontSize = 14;
       }
       else {
         this.expFontSize = 14;

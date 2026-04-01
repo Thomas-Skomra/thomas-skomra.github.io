@@ -31,7 +31,7 @@
 
       <img src="avatar.jpg" alt="Profile Photo" class="-mt-30 mb-4 h-[200px] w-[200px] rounded-full border-4 border-white object-cover">
 
-      <div class="w-full space-y-3 text-black">
+      <div class="w-full space-y-2 text-black">
 
         <div>
           <h2 class="mb-2 border-b border-gray-400 text-sm font-bold uppercase">{{ 'personalInfo.title' | translate }}</h2>
@@ -74,7 +74,7 @@
 
         <div>
           <h2 class="mb-2 border-b border-gray-400 text-sm font-bold uppercase">{{ 'skills.title' | translate }}</h2>
-          <div *ngFor="let skillCategory of skillCategories">
+          <div *ngFor="let skillCategory of skillCategories" class="text-justify">
             <h3 class="pt-0.25 pb-0.25 text-sm font-bold">{{ skillCategory.name }}</h3>
             <p class="text-sm">{{ skillCategory.items.join(', ') }}</p>
           </div>
@@ -101,7 +101,7 @@
       <section class="mb-3">
         <h2 class="mb-2 border-b border-gray-400 pb-1 text-sm font-semibold uppercase">{{ 'summary.title' | translate }}</h2>
 
-        <p>
+        <p class="text-justify">
           {{ 'summary.description' | translate }}
         </p>
 
@@ -110,29 +110,33 @@
       <section class="mb-3">
         <h2 class="mb-2 border-b border-gray-400 pb-1 font-semibold uppercase">{{ 'experience.title' | translate }}</h2>
 
-        <p-timeline [value]="experience" styleClass="cv-timeline">
-          <ng-template pTemplate="content" let-job>
-            <div class="mb-1">
-              <h3 class="text-base font-bold">{{ job.title }} – {{ job.company }}</h3>
-              <p class="mb-1 italic">{{ job.location }} | {{ job.period }}</p>
+        <div *ngFor="let job of experience">
+          <div class="mb-1">
+            <h3 class="text-base font-bold">{{ job.title }} – {{ job.company }}</h3>
+            <!-- Project links -->
+            <p class="mb-0 flex items-center text-sm italic">
+              <span class="flex-1">{{ job.location }} | {{ job.period }}</span>
+              <a href="{{ job.projectUrl }}"
+                 target="_blank"
+                 class="group flex items-center gap-1 text-blue-600">
+                <span class="group-hover:underline">
+                  {{ job.projectName }}
+                </span>
 
-              <!-- Project links -->
-              <div class="space-y-1">
-                <a href="{{ job.projectUrl }}" target="_blank" class="flex items-center text-gray-700">
-                  <span class="material-icons">link</span>
-                  <span class="text-blue-600 hover:underline">{{ job.projectName }}</span>
-                </a>
-              </div>
+                <span class="material-icons ml-auto leading-none text-black text-[16px]">
+                  link
+                </span>
+              </a>
+            </p>
 
-              <ul class="list-disc space-y-1 pl-4" [style.fontSize.px]="expFontSize">
-                <li class="mb-0" *ngFor="let responsibility of job.responsibilities">{{ responsibility }}</li>
-              </ul>
+            <ul class="list-disc space-y-1 pl-4" [style.fontSize.px]="expFontSize ">
+              <li class="mb-0" *ngFor="let responsibility of job.responsibilities">{{ responsibility }}</li>
+            </ul>
 
-            </div>
-          </ng-template>
-        </p-timeline>
+          </div>
+        </div>
 
-      </section>
+</section>
 
       <section class="mb-3">
         <h2 class="mb-2 border-b border-gray-400 pb-1 font-semibold uppercase">{{ 'education.title' | translate }}</h2>

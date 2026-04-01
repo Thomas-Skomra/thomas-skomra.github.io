@@ -25,7 +25,7 @@ import { Subscription } from 'rxjs';
 })
 export class MainComponent implements OnInit, OnDestroy {
   isDarkMode = false;
-  fabOpen = false;
+  fabOpen = true;
 
   experience: any[] = [];
   skillCategories: any[] = [];
